@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "supportdesk"
+version = "0.0.1"
+description = "PSA: ticketing, labor, billing, inventory, SLA, automation, portal"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "SupportDesk" }]
+keywords = ["frappe", "erpnext", "psa", "helpdesk", "ticketing"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: Frappe",
+    "License :: OSI Approved :: MIT License",
+]
+
+dependencies = []
+
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["supportdesk*"]

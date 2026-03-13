@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2025-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_ticket",
+  "default_ticket_status",
+  "default_priority",
+  "default_sla_policy",
+  "ticket_number_prefix",
+  "section_email_ai",
+  "enable_email_to_ticket",
+  "enable_ai_assistant",
+  "section_billing",
+  "default_service_item_remote",
+  "default_service_item_onsite",
+  "default_parts_warehouse",
+  "section_automation",
+  "automation_enabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_ticket",
+   "fieldtype": "Section Break",
+   "label": "Ticket Defaults"
+  },
+  {
+   "fieldname": "default_ticket_status",
+   "fieldtype": "Select",
+   "label": "Default Ticket Status",
+   "options": "Open\nIn Progress\nPending\nResolved\nClosed",
+   "default": "Open"
+  },
+  {
+   "fieldname": "default_priority",
+   "fieldtype": "Select",
+   "label": "Default Priority",
+   "options": "Low\nNormal\nHigh\nUrgent",
+   "default": "Normal"
+  },
+  {
+   "fieldname": "default_sla_policy",
+   "fieldtype": "Link",
+   "label": "Default SLA Policy",
+   "options": "SLA Policy"
+  },
+  {
+   "fieldname": "ticket_number_prefix",
+   "fieldtype": "Data",
+   "label": "Ticket Number Prefix",
+   "default": "TKT"
+  },
+  {
+   "fieldname": "section_email_ai",
+   "fieldtype": "Section Break",
+   "label": "Email & AI"
+  },
+  {
+   "fieldname": "enable_email_to_ticket",
+   "fieldtype": "Check",
+   "label": "Enable Email to Ticket",
+   "default": "0"
+  },
+  {
+   "fieldname": "enable_ai_assistant",
+   "fieldtype": "Check",
+   "label": "Enable AI Assistant",
+   "default": "0"
+  },
+  {
+   "fieldname": "section_billing",
+   "fieldtype": "Section Break",
+   "label": "Billing Defaults"
+  },
+  {
+   "fieldname": "default_service_item_remote",
+   "fieldtype": "Link",
+   "label": "Default Service Item (Remote)",
+   "options": "Item"
+  },
+  {
+   "fieldname": "default_service_item_onsite",
+   "fieldtype": "Link",
+   "label": "Default Service Item (Onsite)",
+   "options": "Item"
+  },
+  {
+   "fieldname": "default_parts_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Parts Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "section_automation",
+   "fieldtype": "Section Break",
+   "label": "Automation"
+  },
+  {
+   "fieldname": "automation_enabled",
+   "fieldtype": "Check",
+   "label": "Automation Enabled",
+   "default": "1"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_single": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "supportdesk",
+ "name": "SupportDesk Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "SupportDesk Technician"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 0
+}

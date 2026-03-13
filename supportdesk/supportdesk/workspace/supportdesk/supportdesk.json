@@ -1,0 +1,84 @@
+{
+ "chart_blocks": [],
+ "content": "[{\"id\":\"cards\",\"type\":\"card\",\"data\":{\"card_name\":\"SupportDesk Shortcuts\"}},{\"id\":\"shortcuts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SupportDesk Links\"}}]",
+ "creation": "2025-01-01 00:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends": "",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "icon": "inbox",
+ "idx": 0,
+ "indicator_color": "Blue",
+ "is_default": 0,
+ "label": "SupportDesk",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tickets",
+   "link_count": 0,
+   "link_to": "List/Ticket",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Templates",
+   "link_count": 0,
+   "link_to": "List/Ticket Template",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Automation Rules",
+   "link_count": 0,
+   "link_to": "List/Automation Rule",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SLA Policies",
+   "link_count": 0,
+   "link_to": "List/SLA Policy",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assets",
+   "link_count": 0,
+   "link_to": "List/Asset",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SupportDesk Settings",
+   "link_count": 0,
+   "link_to": "Form/SupportDesk Settings/SupportDesk Settings",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "supportdesk",
+ "name": "SupportDesk",
+ "onboarding": "",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0,
+ "shortcuts": [],
+ "title": "SupportDesk"
+}

@@ -1,0 +1,30 @@
+{% extends "templates/web.html" %}
+{% block title %}{{ _("My Tickets") }}{% endblock %}
+{% block page_content %}
+<div class="supportdesk-portal container py-5">
+  <h2>{{ _("My Tickets") }}</h2>
+  <div id="ticket-list" class="list-group mt-3">
+    <p class="text-muted">{{ _("Loading...") }}</p>
+  </div>
+  <a href="/portal/new-ticket" class="btn btn-primary mt-3">{{ _("New Ticket") }}</a>
+</div>
+<script>
+  frappe.ready(function() {
+    frappe.call({
+      method: "supportdesk.portal.portal_api.get_my_tickets",
+      callback: function(r) {
+        var el = document.getElementById("ticket-list");
+        if (!r.message || r.message.length === 0) {
+          el.innerHTML = "<p class='text-muted'>" + __("No tickets yet.") + "</p>";
+          return;
+        }
+        el.innerHTML = r.message.map(function(t) {
+          return "<a href='/portal/ticket/" + t.name + "' class='list-group-item list-group-item-action'>" +
+            "<strong>" + (t.ticket_id || t.name) + "</strong> " + (t.subject || "") +
+            " <span class='badge'>" + (t.status || "") + "</span></a>";
+        }).join("");
+      }
+    });
+  });
+</script>
+{% endblock %}

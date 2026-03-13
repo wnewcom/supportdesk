@@ -1,0 +1,43 @@
+{% extends "templates/web.html" %}
+{% block title %}{{ _("New Ticket") }}{% endblock %}
+{% block page_content %}
+<div class="supportdesk-portal container py-5">
+  <h2>{{ _("New Ticket") }}</h2>
+  <form id="ticket-form" class="mt-3">
+    <div class="mb-3">
+      <label class="form-label">{{ _("Subject") }}</label>
+      <input type="text" name="subject" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">{{ _("Description") }}</label>
+      <textarea name="description" class="form-control" rows="4"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ _("Submit") }}</button>
+  </form>
+</div>
+<script>
+  frappe.ready(function() {
+    document.getElementById("ticket-form").onsubmit = function(e) {
+      e.preventDefault();
+      var form = e.target;
+      frappe.call({
+        method: "frappe.client.insert",
+        args: {
+          doc: {
+            doctype: "Ticket",
+            subject: form.subject.value,
+            description: form.description.value,
+            status: "Open"
+          }
+        },
+        callback: function(r) {
+          if (r.message) {
+            window.location.href = "/portal/ticket/" + r.message.name;
+          }
+        }
+      });
+      return false;
+    };
+  });
+</script>
+{% endblock %}

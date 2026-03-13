@@ -1,0 +1,31 @@
+{% extends "templates/web.html" %}
+{% block title %}{{ _("Ticket") }} {{ doc.ticket_id or doc.name }}{% endblock %}
+{% block page_content %}
+<div class="supportdesk-portal container py-5">
+  <h2>{{ doc.subject or doc.name }}</h2>
+  <p><strong>{{ _("Status") }}:</strong> {{ doc.status }} &nbsp; <strong>{{ _("Priority") }}:</strong> {{ doc.priority }}</p>
+  <div class="card mb-3">
+    <div class="card-body">{{ doc.description or "" }}</div>
+  </div>
+  <h5>{{ _("Checklist") }}</h5>
+  <ul id="checklist"></ul>
+  <a href="/portal/tickets" class="btn btn-secondary">{{ _("Back to Tickets") }}</a>
+</div>
+<script>
+  frappe.ready(function() {
+    var ticket_name = "{{ doc.name }}";
+    frappe.call({
+      method: "supportdesk.portal.portal_api.get_ticket",
+      args: { name: ticket_name },
+      callback: function(r) {
+        if (r.message && r.message.checklist_items) {
+          var ul = document.getElementById("checklist");
+          ul.innerHTML = r.message.checklist_items.map(function(i) {
+            return "<li>" + (i.completed ? "✓ " : "☐ ") + (i.task_description || "") + "</li>";
+          }).join("");
+        }
+      }
+    });
+  });
+</script>
+{% endblock %}
